@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GridGame.js</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <br>
+        <h1>GridGame.js</h1>
+        <p>&copy;Declan Scott 2020</p>
+        <br>
+        <hr>
+    </header>
+    <main>
+        <div>
+            <!--16 by 16 display-->
+            <textarea id="code" class="unselect panel">
+// Create objects
+let floor = new Object(0,7,8,1);
+let player = new Object(1, 5, 1, 2);
+
+// Set Background color
+let bgCol = new Color(75, 75, 75);
+SetBackground(bgCol);
+
+// Set player color
+let playerCol = new Color(175, 155, 200);
+player.color = playerCol;
+
+function Update(){
+    // Draw both objects
+    DrawObject(floor);
+    DrawObject(player);
+
+    // Move the player left and right using the A and D keys
+    if(isPressing(100))
+    {
+        player.x++;
+    }
+    if(isPressing(97))
+    {
+        player.x--;
+    }
+}
+            </textarea>
+            <canvas id="gameDisplay" class="panel"></canvas>
+            <br>
+            <div id="console" class="panel"></div>
+            <br>
+            <button type="button" onclick="Run()" class="unselect" id='runButton'>Run</button>
+            <button type="button" onclick="display.ToggleGrid()" id="gridToggle" class="unselect">Grid: On</button>
+            <br>
+            <br>
+            <button type="button" class="unselect" id='download'>Export</button>
+            <br>
+        </div>
+        <br>
+        <div class='dark panel'>
+            <p><strong>GridGame.js is an online, 2D, JavaScript game engine.</strong></p>
+            <p>The engine runs on an 8 by 8 pixel grid<br>
+                and the exported games can be played in a browser.</p>
+        </div>
+    </main>
+    <footer class='dark'>
+        <hr style="margin-top: 0px;">
+        <h3 style="margin-bottom: 5px;">GridGame.js</h3>
+        <h5 style="margin-top: 0px;">Version: 0</h5>
+    </footer>
+</body>
+<script src="js/player.js"></script>
+<script src="js/download.js"></script>
+<script>
+    BUILD = false;
+</script>
+
+</html>
