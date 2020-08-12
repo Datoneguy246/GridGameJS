@@ -17,7 +17,8 @@ footer {
 
 /* Header elements */
 header h1,
-header p {
+header p,
+header a {
     margin: 0px;
     margin-left: 1vw;
 }
@@ -121,6 +122,10 @@ button:hover {
 .deep{
     box-shadow: var(--dark-background-color) 0px -8px;
     background-color: var(--slight-background-color);
+}
+
+a{
+    color: var(--secondary-color);
 }
 
 /* Documentation */

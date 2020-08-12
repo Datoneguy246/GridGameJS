@@ -13,6 +13,7 @@
         <br>
         <h1>GridGame.js</h1>
         <p>&copy;Declan Scott 2020</p>
+        <a href="#doc_top">Go to Documentation</a>
         <br>
         <hr>
     </header>
@@ -68,10 +69,12 @@ function Update(){
         <br>
         
         <!--Documentation-->
-        <div class="deep panel">
-            <br>
-            <h2>Documentation</h2>
-            <hr>
+        <div id='doc_top' class="deep panel">
+            <div>
+                <br>
+                <h1><strong>Documentation</strong></h1>
+                <hr>
+            </div>
             <br>
             <div id='documen'>
                 <h2>Basic:</h2>
@@ -85,6 +88,17 @@ function Update(){
                         <p>Log("Message");</p>
                     </div>
                     <p>In built games, messages are logged in the browser console.</p>
+                </div>
+                <button type='button' class="ex_trigger">Update</button>
+                <div class="ex_content">
+                    <h3>Update Function</h3>
+                    <p>A built-in function that gets called every frame.</p>
+                    <hr>
+                    <p>Usage:</p>
+                    <div class='code'>
+                        <p>function Update(){<br>&nbsp;&nbsp;&nbsp;&nbsp;//Code goes here<br>}</p>
+                    </div>
+                    <p>After each frame, the screen will clear everything (except the background) so it is neccesary to draw things in the Update function in order for them to stay drawn.</p>
                 </div>
                 <button type='button' class="ex_trigger">Objects</button>
                 <div class="ex_content">
@@ -128,6 +142,7 @@ function Update(){
                     <div class='code'>
                         <p>SetBackground(newColor);</p>
                     </div>
+                    <p>SetBackground() does not have to be used in the update function to be drawn every frame.</p>
                     <br>
                 </div>
                 <button type='button' class="ex_trigger">Input</button>
