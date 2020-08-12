@@ -198,8 +198,10 @@ function SetBackground(color)
 }
 
 let curKeycode = 0;
-function isPressing(keycode)
+function isPressing(key)
 {
+    var index = 0;
+    var keycode = key.charCodeAt(index);
     if(keycode == curKeycode)
     {
         curKeycode = 0;
