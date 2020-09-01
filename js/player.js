@@ -9,7 +9,7 @@ class Color{
     }
 }
 
-class Object{
+class Drawable{
     constructor(x, y, w, h) {
         this.x = x;
         this.y = y
@@ -93,7 +93,7 @@ let button;
 
 function Run()
 {
-    let code = document.getElementById('code').value;
+    let code = ace.edit("code").getValue();
     if(BUILD)
     {
         let commentless = code.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
@@ -192,6 +192,12 @@ function Log(msg)
     }
 }
 
+function ClearConsole()
+{
+    let console = document.getElementById('console');
+    console.innerHTML = '';
+}
+
 function SetBackground(color)
 {
     display.background = 'rgb(' + color.r + ', ' + color.g + ', ' + color.b + ')';
@@ -214,7 +220,7 @@ document.addEventListener('keypress', function(event) {
 });
 
 //Object functions (not done in class for simpler syntax. sorry)
-function DrawObject(object)
+function DrawDrawable(object)
 {
     for(let x = object.x; x < object.x + object.w; x++)
     {

@@ -19,24 +19,23 @@
     </header>
     <main>
         <div>
-            <textarea id="code" class="unselect panel">
-// Create objects
-let floor = new Object(0,7,8,1);
-let player = new Object(1, 5, 1, 2);
-
+            <div id="code" class="unselect panel">// Create objects
+let floor = new Drawable(0,7,8,1);
+let player = new Drawable(1, 5, 1, 2);
+                                
 // Set Background color
 let bgCol = new Color(75, 75, 75);
 SetBackground(bgCol);
-
+                                
 // Set player color
 let playerCol = new Color(175, 155, 200);
 player.color = playerCol;
-
+                                
 function Update(){
     // Draw both objects
-    DrawObject(floor);
-    DrawObject(player);
-
+    DrawDrawable(floor);
+    DrawDrawable(player);
+                                
     // Move the player left and right using the A and D keys
     if(isPressing('d'))
     {
@@ -47,16 +46,17 @@ function Update(){
         player.x--;
     }
 }
-            </textarea>
+                </div>
             <canvas id="gameDisplay" class="panel"></canvas>
             <br>
             <div id="console" class="panel"></div>
             <br>
             <button type="button" onclick="Run()" class="unselect" id='runButton'>Run</button>
-            <button type="button" onclick="display.ToggleGrid()" id="gridToggle" class="unselect">Grid: On</button>
-            <br>
-            <br>
             <button type="button" class="unselect" id='download'>Export</button>
+            <br>
+            <br>
+            <button type="button" onclick="display.ToggleGrid()" id="gridToggle" class="unselect">Grid: On</button>
+            <button type="button" onclick="ClearConsole()">Clear</button>
             <br>
         </div>
         <br>
@@ -99,25 +99,25 @@ function Update(){
                     </div>
                     <p>After each frame, the screen will clear everything (except the background) so it is neccesary to draw things in the Update function in order for them to stay drawn.</p>
                 </div>
-                <button type='button' class="ex_trigger">Objects</button>
+                <button type='button' class="ex_trigger">Drawables</button>
                 <div class="ex_content">
-                    <h3>Objects</h3>
-                    <p>An object is a class representing a rectangle that can be drawn on the screen.</p>
+                    <h3>Drawables</h3>
+                    <p>An drawable is a class representing a rectangle that can be drawn on the screen.</p>
                     <hr>
-                    <p>To create an object:</p>
+                    <p>To create an drawable:</p>
                     <div class='code'>
-                        <p>var newObject = new Object(x, y, width, height);</p>
+                        <p>var newDrawable = new Drawable(x, y, width, height);</p>
                     </div>
-                    <p>The x and y coordinates of an object are relative to the top-left corner of itself.</p>
+                    <p>The x and y coordinates of an drawable are relative to the top-left corner of itself.</p>
                     <hr>
-                    <p>To assign an objects color:</p>
+                    <p>To assign an drawables color:</p>
                     <div class='code'>
-                        <p>newObject.color = myColor;</p>
+                        <p>newDrawable.color = myColor;</p>
                     </div>
                     <hr>
-                    <p>To draw an object:</p>
+                    <p>To draw an drawable:</p>
                     <div class='code'>
-                        <p>function Update(){<br>&nbsp;&nbsp;&nbsp;&nbsp;DrawObject(newObject);<br>}</p>
+                        <p>function Update(){<br>&nbsp;&nbsp;&nbsp;&nbsp;DrawDrawable(newDrawable);<br>}</p>
                     </div>
                     <br>
                 </div>
@@ -162,9 +162,15 @@ function Update(){
     <footer class='dark'>
         <hr style="margin-top: 0px;">
         <h3 style="margin-bottom: 5px;">GridGame.js</h3>
-        <h5 style="margin-top: 0px;">Version: 0.1</h5>
+        <h5 style="margin-top: 0px;">Version: 0.2</h5>
     </footer>
 </body>
+<script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("code");
+    editor.setTheme("ace/theme/chaos");
+    editor.session.setMode("ace/mode/javascript");
+</script>
 <script src="js/player.js"></script>
 <script src="js/download.js"></script>
 <script src="js/collapse.js"></script>

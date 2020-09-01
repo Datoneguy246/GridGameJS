@@ -24,7 +24,6 @@ header a {
 }
 
 header {
-    position: fixed;
     text-align: left;
     top: 0;
     width: 100%;
@@ -45,24 +44,15 @@ body {
 
 main {
     margin: 10px;
-    margin-top: 130px;
 }
 
 /* Engine elements */
 #code {
-    resize: none;
-
+    display: inline-block;
     width: 400px;
     height: 400px;
     padding: 0px;
-    margin: 0px;
-
-    background-color: var(--dark-background-color);
-    color: var(--code-color);
-}
-
-#code::-webkit-scrollbar {
-    display: none;
+    margin-right: 0px;
 }
 
 #console {
