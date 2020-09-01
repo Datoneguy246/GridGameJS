@@ -80,6 +80,11 @@ main {
     display: none;
 }
 
+#console p{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
 /* Components */
 hr {
     height: 0.2vw;
