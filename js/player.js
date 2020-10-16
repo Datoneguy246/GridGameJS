@@ -93,7 +93,14 @@ let button;
 
 function Run()
 {
-    let code = ace.edit("code").getValue();
+    let code = null;
+    if(!BUILD)
+    {
+        code = ace.edit("code").getValue();
+    }else{
+        code = document.getElementById("code").value;
+    }
+
     if(BUILD)
     {
         let commentless = code.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
