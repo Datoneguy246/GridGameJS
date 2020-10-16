@@ -13,7 +13,7 @@ let htmlCode =
 document.getElementById("download").addEventListener("click", function(){
     // Generate download of hello.txt file with some content
     let playerScript = readTextFile("js/player.js");
-    let code = document.getElementById("code").value;
+    let code = editor.getValue();
 
     var text = htmlCode + "<textarea id='code' style='display: none;'>" + code + "</textarea>" + "<script>" + playerScript + "</script>" + "<script>window.onload = function(){ Run(); };</script>";
     var filename = "GridGame.html";
